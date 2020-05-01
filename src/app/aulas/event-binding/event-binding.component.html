@@ -1,0 +1,27 @@
+<article>
+    <h3>Event Biding</h3>
+    <div>
+        <button (click)="botaoClicado()" class="btn btn-primary">
+            Me clique!
+        </button>
+        <br/><br/>
+        <input 
+            type="text" 
+            (keyup)="onKeyUp($event)"
+            (keyup.enter)="salvarValor($event.target.value)"
+            (blur)="salvarValor($event.target.value)"
+        />
+        <!-- blur - evento que é ativado quando o elemento perde o foco-->
+        <p>Valor atual: {{valorAtual}}</p>
+        <p>Valor Salvo: {{valorSalvo}}</p>
+
+        <span 
+            (mouseover)="OnmouseOver()"
+            (mouseout)="OnmouseOut()"
+            [class.highlight]="isMouseOver"
+        >
+        <!-- Irá adicionar a classe "highlight" se a variável isMouseOver for true-->
+            Passe o mouse sobre mim
+        </span>
+    </div>
+</article>
