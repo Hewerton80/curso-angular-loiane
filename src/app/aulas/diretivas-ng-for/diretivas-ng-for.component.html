@@ -1,0 +1,48 @@
+<section>
+    <h3>Diretiva - *ngif</h3>
+    <label for="curso">Novo curso: </label>
+    <input 
+        type="text"
+        id="curso"
+        [(ngModel)]="valorCurso"
+    />
+    <button 
+        class="btn btn-primary"
+        (click)="adicionarCurso()"
+    >
+        Adicionar curso
+    </button>
+    <p>lista de cursos:</p>
+
+    <ul>
+        <li *ngFor="let curso of cursos,let i = index">
+            {{i+1}} - {{curso}}
+        </li>
+    </ul>
+</section>
+<hr/>
+<!------------------------ Editor ---------------------->
+<div class="row">
+    <div class="col-sm-6">
+        <b><p>HTML</p></b>
+        <div 
+            ace-editor
+            [readOnly]="true"
+            [mode]="'html'"
+            
+            [(text)]="hmtlContetent"
+            style="min-height: 400px; width:100%; overflow: auto;font-size: 14px;"
+        >
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <b><p>TS</p></b>
+        <div
+            ace-editor
+            [readOnly]="true"
+            [mode]="'typescript'"
+            [(text)]="tsContent"
+            style="min-height: 400px; width:100%; overflow: auto;font-size: 14px;"
+        >
+    </div>
+</div>

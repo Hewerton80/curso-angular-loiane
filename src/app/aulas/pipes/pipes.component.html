@@ -1,0 +1,38 @@
+<!-- para ver todos os pipes: https://angular.io/api?query=pipe -->
+<section>
+    <h3>Pipes</h3>
+    <p><b>Título</b>: {{livro.titulo | uppercase }}</p>
+    <p><b>Estrelas</b>: {{livro.rating | number: '2.1-2'}}</p>
+    <p><b>Página</b>: {{livro.numeroPaginas | number}}</p>
+    <p><b>Preço</b>: {{livro.preco | currency:'BRL' }}</p>
+    <p><b>Data Lançamento</b>: {{livro.dataLancamento | date:'dd/MM/yyyy'}}</p>
+    <p><b>Url</b>: {{livro.url}}</p>
+    <br/>
+    <p><b>Livro</b>: {{livro | json}}</p>
+</section>
+<hr/>
+<!------------------------ Editor ---------------------->
+<div class="row">
+    <div class="col-sm-6">
+        <b><p>HTML</p></b>
+        <div 
+            ace-editor
+            [readOnly]="true"
+            [mode]="'html'"
+            
+            [(text)]="hmtlContetent"
+            style="min-height: 400px; width:100%; overflow: auto;font-size: 14px;"
+        >
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <b><p>TS</p></b>
+        <div
+            ace-editor
+            [readOnly]="true"
+            [mode]="'typescript'"
+            [(text)]="tsContent"
+            style="min-height: 420px; width:100%; overflow: auto;font-size: 14px;"
+        >
+    </div>
+</div>
